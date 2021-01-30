@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:coriander_app/book.dart';
+import 'file:///C:/Users/right/AndroidStudioProjects/KboyExamples/coriander_app/lib/domain/book.dart';
 import 'package:flutter/cupertino.dart';
 
 class BookListModel extends ChangeNotifier {

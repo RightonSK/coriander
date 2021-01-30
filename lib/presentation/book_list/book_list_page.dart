@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:coriander_app/book_list_model.dart';
+import 'package:coriander_app/presentation/add_book/add_book_page.dart';
+import 'package:coriander_app/presentation/book_list/book_list_model.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -30,6 +32,21 @@ class BookListPage extends StatelessWidget {
             );
           },
         ),
+        floatingActionButton:
+            Consumer<BookListModel>(builder: (context, model, child) {
+          return FloatingActionButton(
+              child: Icon(Icons.add),
+              onPressed: () async {
+                await Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AddBookPage(),
+                    fullscreenDialog: true,
+                  ),
+                );
+                model.fetchBooks();
+              });
+        }),
       ),
     );
   }

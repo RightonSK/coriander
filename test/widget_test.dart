@@ -8,9 +8,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:coriander_app/main.dart';
+import 'file:///C:/Users/right/AndroidStudioProjects/KboyExamples/coriander_app/lib/main/presentation.main.dart';
 
-void main() {
+void presentation.main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(MyApp());
