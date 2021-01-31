@@ -40,7 +40,7 @@ class LoginPage extends StatelessWidget {
                     },
                   ),
                   RaisedButton(
-                    child: Text('ログインする'),
+                    child: Text('ログインする!!!!!!'),
                     onPressed: () async {
                       try {
                         await model.login();
