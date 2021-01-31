@@ -1,5 +1,7 @@
+import 'package:coriander_app/login/login_page.dart';
 import 'package:coriander_app/presentation/book_list/book_list_page.dart';
 import 'package:coriander_app/presentation/main/main_model.dart';
+import 'package:coriander_app/signup/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -28,12 +30,22 @@ class MyApp extends StatelessWidget {
                     style: TextStyle(fontSize: 30),
                   ),
                   RaisedButton(
-                    child: Text('ボタン'),
+                    child: Text('新規登録'),
                     onPressed: () {
                       //model.changeKboyText();
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => BookListPage()),
+                        MaterialPageRoute(builder: (context) => SignupPage()),
+                      );
+                    },
+                  ),
+                  RaisedButton(
+                    child: Text('ログイン'),
+                    onPressed: () {
+                      //model.changeKboyText();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginPage()),
                       );
                     },
                   ),
