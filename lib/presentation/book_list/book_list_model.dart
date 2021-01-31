@@ -1,13 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'file:///C:/Users/right/AndroidStudioProjects/KboyExamples/coriander_app/lib/domain/book.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:coriander_app/domain/book.dart';
+
+import 'package:flutter/material.dart';
 
 class BookListModel extends ChangeNotifier {
   List<Book> books = [];
 
   Future fetchBooks() async {
     final docs = await Firestore.instance.collection('books').getDocuments();
-    final books = docs.documents.map((doc) => Book(doc['title'])).toList();
+    final books = docs.documents.map((doc) => Book(doc)).toList();
     this.books = books;
     print('-------');
     print(books.length);

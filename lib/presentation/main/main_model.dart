@@ -1,10 +1,9 @@
+import 'package:flutter/material.dart';
 
-import 'package:flutter/cupertino.dart';
-
-class MainModel extends ChangeNotifier{
+class MainModel extends ChangeNotifier {
   String kboyText = 'KBOY';
 
-  void changeKboyText(){
+  void changeKboyText() {
     kboyText = 'kboyさんかっこいい';
     notifyListeners();
   }
