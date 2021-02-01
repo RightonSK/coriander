@@ -45,11 +45,6 @@ class LoginPage extends StatelessWidget {
                       try {
                         await model.login();
                         //_showDialog(context, 'ログインしました');
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => BookListPage()),
-                        );
                       } catch (e) {
                         _showDialog(context, e.toString());
                       }

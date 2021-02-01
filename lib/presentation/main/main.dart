@@ -30,6 +30,16 @@ class MyApp extends StatelessWidget {
                     style: TextStyle(fontSize: 30),
                   ),
                   RaisedButton(
+                    child: Text('本一覧'),
+                    onPressed: () {
+                      //model.changeKboyText();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => BookListPage()),
+                      );
+                    },
+                  ),
+                  RaisedButton(
                     child: Text('新規登録'),
                     onPressed: () {
                       //model.changeKboyText();
