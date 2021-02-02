@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:coriander_app/domain/book.dart';
 import 'package:coriander_app/presentation/add_book/add_book_page.dart';
 import 'package:coriander_app/presentation/book_list/book_list_model.dart';
@@ -107,7 +106,7 @@ class BookListPage extends StatelessWidget {
   }
 
   Future _showDialog(BuildContext context, String title) {
-    showDialog(
+    return showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(

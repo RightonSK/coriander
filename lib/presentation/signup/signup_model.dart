@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:coriander_app/domain/book.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -16,12 +15,12 @@ class SignupModel extends ChangeNotifier {
       throw ('パスワードを入力してください');
     }
 
-    final FirebaseUser user = (await _auth.createUserWithEmailAndPassword(
+    final User user = (await _auth.createUserWithEmailAndPassword(
             email: mail, password: password))
         .user;
 
     final email = user.email;
-    Firestore.instance.collection('users').add({
+    FirebaseFirestore.instance.collection('users').add({
       'email': email,
       'createdAt': Timestamp.now(),
     });

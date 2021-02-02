@@ -34,7 +34,7 @@ class AddBookModel extends ChangeNotifier {
     }
     final imageURL = await _uploadImage();
 
-    Firestore.instance.collection('books').add({
+    FirebaseFirestore.instance.collection('books').add({
       'title': bookTitle,
       'imageURL': imageURL,
       'createdAt': Timestamp.now(),
@@ -44,8 +44,8 @@ class AddBookModel extends ChangeNotifier {
   Future updateBook(Book book) async {
     final imageURL = await _uploadImage();
     final document =
-        Firestore.instance.collection('books').document(book.documentID);
-    await document.updateData({
+        FirebaseFirestore.instance.collection('books').doc(book.documentID);
+    await document.update({
       'title': bookTitle,
       'imageURL': imageURL,
       'updateAt': Timestamp.now(),

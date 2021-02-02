@@ -1,24 +1,21 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:coriander_app/domain/book.dart';
-import 'package:coriander_app/login/login_model.dart';
-import 'package:coriander_app/presentation/book_list/book_list_page.dart';
+import 'package:coriander_app/presentation/signup/signup_model.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class LoginPage extends StatelessWidget {
+class SignupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mailController = TextEditingController();
     final passwordController = TextEditingController();
 
-    return ChangeNotifierProvider<LoginModel>(
-      create: (_) => LoginModel(),
+    return ChangeNotifierProvider<SignupModel>(
+      create: (_) => SignupModel(),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('ログイン'),
+          title: Text('サインアップ'),
         ),
-        body: Consumer<LoginModel>(
+        body: Consumer<SignupModel>(
           builder: (context, model, child) {
             return Padding(
               padding: const EdgeInsets.all(8.0),
@@ -40,11 +37,11 @@ class LoginPage extends StatelessWidget {
                     },
                   ),
                   RaisedButton(
-                    child: Text('ログインする!!'),
+                    child: Text('登録する'),
                     onPressed: () async {
                       try {
-                        await model.login();
-                        //_showDialog(context, 'ログインしました');
+                        await model.signUp();
+                        _showDialog(context, '登録完了しました');
                       } catch (e) {
                         _showDialog(context, e.toString());
                       }
@@ -60,7 +57,7 @@ class LoginPage extends StatelessWidget {
   }
 
   Future _showDialog(BuildContext context, String title) {
-    showDialog(
+    return showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(

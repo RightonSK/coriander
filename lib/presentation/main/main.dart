@@ -1,12 +1,14 @@
-import 'package:coriander_app/login/login_page.dart';
+import 'file:///C:/Users/right/AndroidStudioProjects/KboyExamples/coriander_app/lib/presentation/login/login_page.dart';
 import 'package:coriander_app/presentation/book_list/book_list_page.dart';
 import 'package:coriander_app/presentation/main/main_model.dart';
-import 'package:coriander_app/signup/signup_page.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'file:///C:/Users/right/AndroidStudioProjects/KboyExamples/coriander_app/lib/presentation/signup/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-void main() {
-  print('aaaa');
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 

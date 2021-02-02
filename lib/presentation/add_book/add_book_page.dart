@@ -1,7 +1,5 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:coriander_app/domain/book.dart';
 import 'package:coriander_app/presentation/add_book/add_book_model.dart';
-import 'package:coriander_app/presentation/book_list/book_list_model.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
